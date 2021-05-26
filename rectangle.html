@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800px" height="900px" style=" background-color : yellow"></canvas>
+<script>
+    let canvas = document.getElementById('myCanvas');
+    let pen = canvas.getContext('2d');
+
+    class Rectangle {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+
+        Area(dai, rong) {
+            return (this.dai * this.rong);
+        }
+
+        Perimeter(dai, rong) {
+            return ((this.dai + this.rong) * 2);
+        }
+
+        render(canvas,x,y,color) {
+            let pen = canvas.getContext('2d');
+
+            pen.beginPath();
+            pen.rect(x, y, this.dai, this.rong);
+            pen.fillStyle = color;
+            pen.fill();
+            pen.closePath();
+        }
+    }
+
+    function creatRectangle() {
+        let x = 110
+        let y = 110
+        let rectangle = new Rectangle(x, y);
+        rectangle.render(canvas);
+    }
+
+    let Hcn1 = new Rectangle(220, 210);
+    Hcn1.render(canvas,0,0,"blue");
+    let Hcn2 = new Rectangle(220, 210);
+    Hcn2.render(canvas,400,400,"red");
+</script>
+</body>
+</html>
