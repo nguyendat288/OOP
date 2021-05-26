@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600px" height="600px" style=" background-color : yellow"></canvas>
+<script>
+    let canvas = document.getElementById('myCanvas');
+    let pen = canvas.getContext('2d');
+
+    // pen.beginPath()  ;
+    // pen.rect(canvas.width/2-100,canvas.height/2-50,200,100);
+    // pen.lineWidth = 1;
+    // pen.stroke();
+    // pen.fillStyle = 'pink';
+    // pen.fill();
+    // pen.closePath();
+    //
+    // pen.beginPath();
+    // pen.arc(canvas.width/2,canvas.height/2,50,0,2*Math.PI);
+    // pen.strokeStyle = 'red';
+    // pen.lineWidth = 10;
+    // pen.stroke();
+    // pen.fillStyle = 'green';
+    // pen.fill();
+    // pen.closePath();
+  class Circle {
+    constructor(x,y,radius,color) {
+    this.x=x;
+    this.y=y;
+    this.color=color;
+    this.radius=radius;
+    }
+      render(canvas){
+          let pen = canvas.getContext('2d');
+          pen.beginPath();
+          pen.arc(this.x,this.y,this.radius,0,2*Math.PI);
+          pen.fillStyle = this.color;
+          pen.fill();
+          pen.closePath();
+      }
+      renderRect(canvas){
+          let pen = canvas.getContext('2d');
+          pen.beginPath();
+          pen.rect(this.x,this.y,this.radius,this.radius);
+          pen.fillStyle = this.color;
+          pen.fill();
+          pen.closePath();
+      }
+  }
+      function creatCircle(number) {
+          for (let i = 0; i < number; i++) {
+              let x = randomNumber(0,canvas.width);
+              let y = randomNumber(0,canvas.height);
+              let radius = randomNumber(70,150);
+              let color = randomColor();
+              let circle = new Circle(x,y,radius,color);
+              circle.render(canvas);
+          }
+      }
+      function randomNumber(min,max) {
+          return Math.floor(Math.random()*max-min)+min;
+      }
+    function randomColor() {
+        let r = randomNumber(0,255);
+        let g = randomNumber(0,255);
+        let b = randomNumber(0,255);
+        // return "rgb("+r+","+g+","+b+')';
+        return `rgb(${r},${g},${b})`;
+    }
+      creatCircle(30)
+</script>
+</body>
+</html>

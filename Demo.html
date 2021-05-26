@@ -1,10 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo OOP</title>
 </head>
 <body>
-$END$
+<script>
+  //OOP: Object Oriented Programming
+  // - Attribute
+  // - Method
+  //Object
+  // - Phuc vu cho tinh chat bao goi cua doi tuong: getter / setter
+
+  class Product { //ES6
+    constructor(_name) { //Phuong thuc khoi tao
+      this.name = _name;
+      this.price = 37;
+      this.salePrice = 35;
+      this.rate = 5;
+      this.image = 'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-vang-new-600x600-1-600x600.jpg';
+    }
+
+    getInfo(){
+      return (this.name + ' co gia la '+this.price);
+    }
+
+    setPrice(value){
+      this.price = value;
+    }
+    getPrice(){
+      return this.price;
+    }
+  }
+  let product = ['Iphone 12', 37, 35, 5 ,'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-vang-new-600x600-1-600x600.jpg'];
+
+  // let objProduct1 = {
+  //     name:'Iphone 12', //name: attribute/ property
+  //     price: 37,
+  //     salePrice: 35,
+  //     rate: 5,
+  //     image: 'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-vang-new-600x600-1-600x600.jpg'
+  // };
+  // let objProduct2 = {
+  //     name:'Iphone 12', //name: attribute/ property
+  //     price: 37,
+  //     salePrice: 35,
+  //     rate: 5,
+  //     image: 'https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-vang-new-600x600-1-600x600.jpg'
+  // };
+
+  // console.log(product[0]);
+  // console.log(objProduct['name']);
+  // console.log(objProduct.name);
+
+  let Animal = function () { //ES5
+    this.name = 'abc';
+    this.age = 5;
+
+    this.say = function () {
+
+    }
+  }
+
+  let objProduct1 = new Product('Iphone 12 Promax');
+  let objProduct2 = new Product('Nokia 1280');
+  objProduct2.setPrice(5);
+  console.log(objProduct1.getInfo());
+  console.log(objProduct2.getInfo());
+
+
+</script>
 </body>
 </html>
+<!--
+Product
+- name
+- price
+- image
++ getInfo
+-->

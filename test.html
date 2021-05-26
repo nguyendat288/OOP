@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  class Den {
+      constructor() {
+          this.status=status;
+          this.Pin=Pin;
+      }
+  light(){
+          this.Pin.energy--;
+  }
+  turnOn(){
+          this.status=true;
+  }
+  turnOff(){
+          this.status=false;
+  }
+  }
+  class Pin {
+      constructor() {
+          this.energy=energy;
+          this.name=name;
+      }
+
+  }
+  let pinTQ=new Pin(10,TQ);
+  let pinVN=new Pin(15,TQ);
+  let denTQ=new Den(true,pinTQ);
+</script>
 </body>
 </html>
