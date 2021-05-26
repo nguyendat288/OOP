@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempereture</title>
+</head>
+<body>
+<script>
+    class Temper {
+        constructor(c) {
+            this.c=c;
+        }
+        F(c){
+            return (1.8*this.c+32);
+        }
+        K(c){
+          return (this.c+173);
+    }
+
+    }
+    let Temper0 =new Temper(4);
+    document.write(Temper0.F()+ ' độ F' + '<br>');
+    document.write(Temper0.K() + ' độ K ' );
+
+</script>
+</body>
+</html>
